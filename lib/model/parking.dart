@@ -60,5 +60,5 @@ class Guest{
       GuestFields.timeCheckout: timeCheckout!.toIso8601String(),
       GuestFields.imgPath: imgPath,
 
-  }
+  };
 }
