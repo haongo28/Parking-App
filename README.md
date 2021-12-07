@@ -1,6 +1,16 @@
-# Parking-App [DevFest HCMC 2021]
+# parking
 
-https://trinhlbk.notion.site/Team-26-Parking-App-16a95817ba9b4e18b06746b80a007050
+A new Flutter project.
 
-Parking App is a challenge project of team 26
+## Getting Started
 
+This project is a starting point for a Flutter application.
+
+A few resources to get you started if this is your first Flutter project:
+
+- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+
+For help getting started with Flutter, view our
+[online documentation](https://flutter.dev/docs), which offers tutorials, samples, guidance on
+mobile development, and a full API reference.
