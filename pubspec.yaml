@@ -1,12 +1,16 @@
-name: shrine
-description: Learn how to use Material for structure and layout.
+name: parking_app
+description: This is a challenge project of Team 26.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
+
   intl: ^0.17.0-nullsafety.2
 
   cupertino_icons: ^1.0.3
@@ -22,3 +26,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+

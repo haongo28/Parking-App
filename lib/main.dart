@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shrine/car_page.dart';
+
+import 'car_page.dart';
 
 void main() {
   runApp(const MyApp());

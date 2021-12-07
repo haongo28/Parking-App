@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:shrine/model/car_license_plate.dart';
+
+import 'model/car_license_plate.dart';
 
 class CarPage extends StatelessWidget {
   @override
