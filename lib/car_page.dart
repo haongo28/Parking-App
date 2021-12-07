@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:parking_app/screens/detail.dart';
 
 import 'model/car_license_plate.dart';
 
@@ -9,11 +10,11 @@ class CarPage extends StatelessWidget {
     CarLicensePlate? carLicensePlate = CarLicensePlate(
         category: Category.accessories,
         id: 0,
-        licensePlate: 'Vagabond sack',
-        totalTimeParked: 120,
+        licensePlate: '90-B2 99999',
+        totalTimeParked: 12,
         timeCheckIn: 5,
         price: 45.000,
-        imagePath: 'assets/cookiemint.jpg');
+        imagePath: 'assets/bienso.jpeg');
     return Scaffold(
       backgroundColor: Color(0xFFFCFAF8),
       body: ListView(
@@ -29,7 +30,7 @@ class CarPage extends StatelessWidget {
                 crossAxisSpacing: 10.0,
                 mainAxisSpacing: 15.0,
                 childAspectRatio: 0.8,
-                children: <Widget>[_buildCard(carLicensePlate)],
+                children: <Widget>[_buildCard(context, carLicensePlate)],
               )),
           const SizedBox(height: 15.0)
         ],
@@ -37,12 +38,17 @@ class CarPage extends StatelessWidget {
     );
   }
 
-  Widget _buildCard(CarLicensePlate? car) {
+  Widget _buildCard(BuildContext context, CarLicensePlate? car) {
     return Padding(
         padding:
             const EdgeInsets.only(top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
         child: InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DetailScreen()),
+              );
+            },
             child: Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(15.0),

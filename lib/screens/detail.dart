@@ -25,7 +25,7 @@ class _DetailScreenState extends State<DetailScreen> {
           height: size.height*0.5,
           decoration: const BoxDecoration(
             image: DecorationImage (image: AssetImage
-              ("assets/images/image_example.jpg"), fit:
+              ("assets/bienso.jpeg"), fit:
             BoxFit.contain),
           ),
           child: SafeArea(

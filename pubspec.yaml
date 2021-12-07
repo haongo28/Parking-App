@@ -1,3 +1,4 @@
+
 name: parking_app
 description: This is a challenge project of Team 26.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -12,13 +13,16 @@ dependencies:
     sdk: flutter
 
   intl: ^0.17.0-nullsafety.2
-
-  cupertino_icons: ^1.0.3
-  shrine_images: ^2.0.1
+  cupertino_icons: ^1.0.2
+  google_ml_kit: ^0.7.3
+  camera: ^0.9.4+5
+  image_picker: ^0.8.4+4
+  sqflite: ^2.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
   flutter_lints: ^1.0.0
 
 flutter:
@@ -26,4 +30,3 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
-

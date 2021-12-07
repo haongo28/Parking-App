@@ -1,6 +1,6 @@
+import 'package:parking_app/model/parking.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:shrine/model/parking.dart';
 
 class ParkingDatabase {
   static final ParkingDatabase instance = ParkingDatabase._init();
@@ -65,7 +65,7 @@ class ParkingDatabase {
   Future<List<Guest>> readAllNotes() async {
     final db = await instance.database;
 
-    final orderBy = '${GuestFields.checkin_time} ASC';
+    final orderBy = '${GuestFields.timeCheckin} ASC';
     // final result =
     //     await db.rawQuery('SELECT * FROM $tableNotes ORDER BY $orderBy');
 
