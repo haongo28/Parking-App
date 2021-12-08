@@ -1,8 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:parking_app/model/car_license_plate.dart';
 
 class DetailScreen extends StatefulWidget {
-  const DetailScreen({Key? key}) : super(key: key);
+  final CarLicensePlate? carLicensePlate;
+
+  const DetailScreen({required this.carLicensePlate});
 
   @override
   _DetailScreenState createState() => _DetailScreenState();
@@ -23,9 +26,9 @@ class _DetailScreenState extends State<DetailScreen> {
         Container(
           width: double.infinity,
           height: size.height*0.5,
-          decoration: const BoxDecoration(
-            image: DecorationImage (image: AssetImage
-              ("assets/bienso.jpeg"), fit:
+          decoration: BoxDecoration(
+            image: DecorationImage(image: AssetImage
+              (widget.carLicensePlate?.imagePath ?? ""), fit:
             BoxFit.contain),
           ),
           child: SafeArea(
@@ -35,7 +38,9 @@ class _DetailScreenState extends State<DetailScreen> {
                 IconButton(
                   icon: const Icon(Icons.arrow_back),
                   color: Colors.black,
-                  onPressed: () {  },
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
                 ),
               ],
             ),
@@ -63,26 +68,30 @@ class _DetailScreenState extends State<DetailScreen> {
                   ),
                 ),
                 SizedBox(height:20,),
-                Text("90 - B2\n 99999", style: TextStyle(
+                Text(
+                  widget.carLicensePlate?.licensePlate ?? "", style: TextStyle(
                     fontSize: 45,
                     fontWeight: FontWeight.bold
                 ),
                 ),
                 SizedBox(height: 20,),
-                Text("Check-in at 7PM", style: TextStyle(
-                  fontSize: 25,
-                ),
-                ),
-                SizedBox(height: 10,),
-                Text("Total time: 2 hours", style: TextStyle(
-                  fontSize: 25,
-                ),
+                Text("${widget.carLicensePlate?.timeCheckIn.toString()}h",
+                  style: TextStyle(
+                    fontSize: 25,
+                  ),
                 ),
                 SizedBox(height: 10,),
-                Text("10 dollars", style: TextStyle(
-                  fontSize: 35,
-                  fontWeight: FontWeight.bold,
+                Text("${widget.carLicensePlate?.totalTimeParked.toString()}h",
+                  style: TextStyle(
+                    fontSize: 25,
+                  ),
                 ),
+                SizedBox(height: 10,),
+                Text("${widget.carLicensePlate?.price.toString()} dollars",
+                  style: TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
             ),

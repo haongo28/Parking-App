@@ -1,8 +1,10 @@
 import 'dart:io';
+
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:parking_app/car_page.dart';
+import 'package:parking_app/screens/car_page.dart';
 import 'package:parking_app/screens/scanner.dart';
+
 import 'VisionDetectorViews/text_detectorv2_view.dart';
 
 List<CameraDescription> cameras = [];
