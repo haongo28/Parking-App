@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:parking_app/screens/detail.dart';
 
-import 'model/car_license_plate.dart';
+import '../model/car_license_plate.dart';
 
 class CarPage extends StatelessWidget {
   @override
@@ -10,7 +10,7 @@ class CarPage extends StatelessWidget {
     CarLicensePlate? carLicensePlate = CarLicensePlate(
         category: Category.accessories,
         id: 0,
-        licensePlate: '90-B2 99999',
+        licensePlate: '90-B2\n99999',
         totalTimeParked: 12,
         timeCheckIn: 5,
         price: 45.000,
@@ -38,7 +38,7 @@ class CarPage extends StatelessWidget {
     );
   }
 
-  Widget _buildCard(BuildContext context, CarLicensePlate? car) {
+  Widget _buildCard(BuildContext context, CarLicensePlate? carLicensePlate) {
     return Padding(
         padding:
             const EdgeInsets.only(top: 5.0, bottom: 5.0, left: 5.0, right: 5.0),
@@ -46,7 +46,9 @@ class CarPage extends StatelessWidget {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => DetailScreen()),
+                MaterialPageRoute(
+                    builder: (context) =>
+                        DetailScreen(carLicensePlate: carLicensePlate)),
               );
             },
             child: Container(
@@ -61,26 +63,29 @@ class CarPage extends StatelessWidget {
                     color: Colors.white),
                 child: Column(children: [
                   Hero(
-                      tag: car?.imagePath ?? "",
+                      tag: carLicensePlate?.imagePath ?? "",
                       child: Container(
                           height: 150.0,
                           width: 150.0,
                           decoration: BoxDecoration(
                               image: DecorationImage(
-                                  image: AssetImage(car?.imagePath ?? ""),
+                                  image: AssetImage(
+                                      carLicensePlate?.imagePath ?? ""),
                                   fit: BoxFit.contain)))),
                   const SizedBox(height: 25.0),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       SizedBox(width: 10.0),
-                      Text(car?.licensePlate ?? " ",
-                          style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              color: Color(0xFF575E67),
-                              fontFamily: 'Varela',
-                              fontSize: 16.0)),
-                      Text("${car?.totalTimeParked.toString()}h" ?? "0",
+                      Flexible(
+                        child: Text(carLicensePlate?.licensePlate ?? " ",
+                            style: const TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Color(0xFF575E67),
+                                fontFamily: 'Varela',
+                                fontSize: 16.0)),
+                      ),
+                      Text("${carLicensePlate?.totalTimeParked.toString()}h",
                           style: const TextStyle(
                               color: Color(0xFFCC8053),
                               fontFamily: 'Varela',
